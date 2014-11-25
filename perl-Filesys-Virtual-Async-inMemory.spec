@@ -1,12 +1,11 @@
 #
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define	pdir	Filesys
 %define	pnam	Virtual-Async-inMemory
+%include	/usr/lib/rpm/macros.perl
 Summary:	perl(Filesys::Virtual::Async::inMemory)
-#Summary(pl.UTF-8):	
 Name:		perl-Filesys-Virtual-Async-inMemory
 Version:	0.01
 Release:	1
@@ -15,8 +14,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Filesys/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	eaccc90cdd17eda43212e31215d7cfbd
-# generic URL, check or change before uncommenting
-#URL:		http://search.cpan.org/dist/Filesys-Virtual-Async-inMemory/
+URL:		http://search.cpan.org/dist/Filesys-Virtual-Async-inMemory/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -28,17 +26,12 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This module lets you run the Filesys::Virtual::Async API entirely in memory. Nothing special here, really :)
+This module lets you run the Filesys::Virtual::Async API entirely in
+memory. Nothing special here, really :)
 
-This module makes extensive use of the functions in File::Spec to be portable, so it might trip you up if
-you are developing on a linux box and trying to play with '/foo' on a win32 box :)
-
-This constructor accepts either a hashref or a hash, valid options are:
-
-
-
-# %description -l pl.UTF-8
-# TODO
+This module makes extensive use of the functions in File::Spec to be
+portable, so it might trip you up if you are developing on a linux box
+and trying to play with '/foo' on a win32 box :)
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
