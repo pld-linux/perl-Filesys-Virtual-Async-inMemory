@@ -4,7 +4,6 @@
 
 %define	pdir	Filesys
 %define	pnam	Virtual-Async-inMemory
-%include	/usr/lib/rpm/macros.perl
 Summary:	perl(Filesys::Virtual::Async::inMemory)
 Name:		perl-Filesys-Virtual-Async-inMemory
 Version:	0.01
